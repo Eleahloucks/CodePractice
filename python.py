@@ -61,4 +61,13 @@ def get_range(start, stop):
 
 
 
+## get longest string
 
+def get_longest(strings):
+    longest = ""
+
+    for s in strings:
+        if len(s) > len(longest):
+            longest = s
+
+    return longest
