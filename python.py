@@ -71,3 +71,53 @@ def get_longest(strings):
             longest = s
 
     return longest
+
+## QUEUE PRACTICE
+
+class Queue:
+    def __init__(self):
+        self.data = []
+
+    def enqueue(self, item):
+        """Add `item` to the queue. Runtime: O(1)."""
+
+        self.data.append(item)
+
+    def dequeue(self):
+        """Remove and return first item in queue. Runtime: O(n)."""
+
+        if self.is_empty():
+            return None
+        return self.data.pop(0)
+
+    def is_empty(self):
+        """Returns True if queue is empty. Runtime: O(1)."""
+
+        return self.data == []
+# Better solution using a deque:
+
+from collections import deque
+
+
+class BetterQueue:
+    def __init__(self):
+        self.data = deque()
+
+    def enqueue(self, item):
+        """Add `item` to the queue. Runtime: O(1)."""
+
+        self.data.append(item)
+
+    def dequeue(self):
+        """Remove and return first item in queue. Runtime: O(1)."""
+
+        if self.is_empty():
+            return None
+        return self.data.popleft()
+
+    def is_empty(self):
+        """Returns True if queue is empty. Runtime: O(1)."""
+
+        if self.data:
+            return False
+        else:
